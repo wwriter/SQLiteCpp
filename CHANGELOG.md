@@ -140,3 +140,9 @@ Version 2.4.0 - August 25 2019
 - #211 Implement Database::backup()
 - #215 Disable implicit fallthrough warning when building internal sqlite3
 - #216 Set PROJECT_VERSION to fix CMP0048 Policy warnings
+
+Version 3.x (upcoming)
+- C++11 minimum
+- CMake 3.1 minimum
+- Visual Studio 2015 minimum
+- Googletest 1.10

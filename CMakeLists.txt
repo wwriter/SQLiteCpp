@@ -4,19 +4,15 @@
 #
 # Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
 # or copy at http://opensource.org/licenses/MIT)
-cmake_minimum_required(VERSION 2.8.12) # first version with add_compile_options()
-if (CMAKE_VERSION VERSION_LESS 3.0)
-    project(SQLiteCpp)
-    set(PROJECT_VERSION_MAJOR 2)
-    set(PROJECT_VERSION_MINOR 4)
-    set(PROJECT_VERSION_PATCH 0)
-    set(PROJECT_VERSION "2.4.0")
-else()
-    cmake_policy(SET CMP0048 NEW)
-    project(SQLiteCpp VERSION "2.4.0")
-endif()
+cmake_minimum_required(VERSION 3.1) # for "CMAKE_CXX_STANDARD" version
+project(SQLiteCpp VERSION "2.99")
+
+# SQLiteC++ 3.x now requires C++11 compiler
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 message (STATUS "CMake version: ${CMAKE_VERSION}")
+message (STATUS "Project version: ${PROJECT_VERSION}")
 
 # Define useful variables to handle OS differences:
 if (WIN32)
@@ -145,8 +141,12 @@ set(SQLITECPP_DOC
 )
 source_group(doc FILES ${SQLITECPP_DOC})
 
-# list of script files of the library
+# list of config & script files of the library
 set(SQLITECPP_SCRIPT
+ .editorconfig
+ .gitbugtraq
+ .gitignore
+ .gitmodules
  .travis.yml
  appveyor.yml
  build.bat
