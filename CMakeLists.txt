@@ -145,6 +145,7 @@ source_group(doc FILES ${SQLITECPP_DOC})
 set(SQLITECPP_SCRIPT
  .editorconfig
  .gitbugtraq
+ .github/workflows/actions.yml
  .gitignore
  .gitmodules
  .travis.yml
